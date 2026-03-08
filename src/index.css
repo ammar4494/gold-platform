@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General Page Styling */
+body {
+  margin: 0;
+  background-color: #f8fafc; /* Light gray background for the app */
+  color: #1e293b;
+}
+
+/* A4 Print Logic */
+@media print {
+  /* Hide the sidebar, buttons, and navigation when printing */
+  aside, button, nav, .no-print {
+    display: none !important;
+  }
+
+  /* Reset body for printing */
+  body {
+    background-color: white !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure the receipt takes the full A4 width */
+  .print-area {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
